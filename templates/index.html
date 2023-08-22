@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plinomjer App</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+  </head>
+
+  <body>
+    <h2>Dodaj stanje plinomjera</h2>
+    <label for="owner">Vlasnik:</label>
+    <input type="text" id="owner" />
+    <label for="street">Ulica:</label>
+    <input type="text" id="street" />
+    <label for="city">Grad:</label>
+    <input type="text" id="city" />
+    <label for="state">Stanje plinomjera(l):</label>
+    <input type="text" id="state" />
+    <button onclick="addMeter()">Dodaj stanje</button>
+
+    <h2>Brisanje stanje plinomjera</h2>
+    <label for="delete_id">ID mjerenja:</label>
+    <input type="number" id="delete_id" />
+    <button onclick="deleteMeter()">Izbrisi stanje</button>
+
+    <h2>Filter plinomjera</h2>
+    <label for="filter_date">Datum mjerenja(YYYY-MM-DD):</label>
+    <input type="text" id="filter_date" />
+    <label for="filter_city">Grad:</label>
+    <input type="text" id="filter_city" />
+    <button onclick="filterMeters()">Potraži</button>
+    <button onclick="getAllMeters()">Pokaži sve</button>
+
+    <h2>Stanje Plinomjera</h2>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Vlasnik</th>
+          <th>Ulica</th>
+          <th>Grad</th>
+          <th>Stanje plinomjera(l)</th>
+          <th>Datum mjerenja</th>
+        </tr>
+      </thead>
+      <tbody id="meterTable"></tbody>
+    </table>
+
+    <h2>Uredi stanje plinomjera</h2>
+    <label for="edit_id">ID mjerenja:</label>
+    <input type="number" id="edit_id" />
+    <label for="edit_owner">Vlasnik:</label>
+    <input type="text" id="edit_owner" />
+    <label for="edit_street">Ulica:</label>
+    <input type="text" id="edit_street" />
+    <label for="edit_city">Grad:</label>
+    <input type="text" id="edit_city" />
+    <label for="edit_state">Stanje plinomjera(l):</label>
+    <input type="text" id="edit_state" />
+    <button onclick="editMeter()">Uredi stanje</button>
+
+  </body>
+</html>
